@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../dist/css/easy.styled.select.min.css">
+    <style>
+        .currency-area {
+            margin: 1rem 0 0.25rem 0;
+        }
+    </style>
+    <title>Easy Styled Select</title>
+</head>
+<body>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Select currency value</h1>
+            <!-- // Start  block -->
+            <div class="currency-area">
+                <label for="currency-switcher">
+                    <select class="easy-styled-select" id="currency-switcher" name="currencySwitcher">
+                        <option value="UAH" selected>UAH</option>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                    </select>
+                </label>
+            </div>
+            <!-- End block -->
+
+            <code id="selected-result"></code>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script src="../dist/js/easy.styled.select.min.js"></script>
+<script>
+    function setCurrencySelect() {
+        let styledSelect = $('.easy-styled-select');
+        let result = $('#selected-result');
+        styledSelect.easyStyledSelect({
+            onInit: function () {
+                console.log('I`am init!');
+                result.html('Selected: ' + styledSelect.val());
+            },
+            onOpen: function () {
+                console.log('I`am open!');
+            },
+            onSelect: function () {
+                console.log('I`am select!');
+                result.html('Selected: ' + styledSelect.val());
+            },
+        });
+    }
+
+    $(document).ready(function () {
+        setCurrencySelect();
+    });
+
+
+</script>
+
+</body>
+</html>

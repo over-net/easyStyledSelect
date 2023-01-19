@@ -1,0 +1,32 @@
+{
+  "name": "easy.styled.select",
+  "description": "Easy Styled Select is a jQuery based replacement for select boxes.",
+  "author": {
+    "name": "Mykhailo Kulyk",
+    "url": "https://github.com/over-net"
+  },
+  "contributors": [
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/over-net/easyStyledSelect.git"
+  },
+  "bugs": {
+    "url": "https://github.com/over-net/easyStyledSelect/issues"
+  },
+  "keywords": [
+    "select",
+    "dropdown"
+  ],
+  "license": "MIT",
+  "main": "dist/js/easy.styled.select.js",
+  "style": "dist/css/easy.styled.select.css",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "version": "1.0.0-rc.0",
+  "devDependencies": {
+  },
+  "dependencies": {}
+}

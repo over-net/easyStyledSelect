@@ -1,0 +1,118 @@
+// Select
+$selectColor: #45c2ae;
+$selectMinWidth: 5rem;
+$selectMinHeight: 2.5rem;
+$selectBorder: .0625rem solid #909FAC;
+$selectArrowsDisposition: .65rem;
+$selectArrowsColor: #909FAC;
+$selectActiveArrowsColor: #45c2ae;
+$selectBackgroundColor: transparent;
+
+// Options
+$optionsBackgroundColor: #ffffff;
+$optionsColor: #174e76;
+$optionsBorder: .0625rem solid rgba(#909FAC, .25);
+$optionsSelectedColor: #ffffff;
+$optionsSelectedBackgroundColor: #eb696a;
+
+
+.select-hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.select {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  font-size: .875rem;
+  font-weight: 700;
+  border: $selectBorder;
+  color: $selectColor;
+  min-width: $selectMinWidth;
+  min-height: $selectMinHeight;
+
+  &-styled {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    padding: .5rem 1rem;
+    transition: all 0.2s ease-in;
+
+    &:before, &:after {
+      content: '';
+      width: 0;
+      height: 0;
+      border: .25rem solid transparent;
+      right: .625rem;
+    }
+
+    &:before {
+      border-color: transparent transparent $selectArrowsColor transparent;
+      position: absolute;
+      top: $selectArrowsDisposition;
+    }
+
+    &:after {
+      border-color: $selectArrowsColor transparent transparent transparent;
+      position: absolute;
+      bottom: $selectArrowsDisposition;
+    }
+
+    &.active {
+      box-shadow: 0 0 8px rgba($selectArrowsColor, .75);
+
+      &:before {
+        border-color: transparent transparent $selectActiveArrowsColor transparent;
+      }
+
+      &:after {
+        border-color: $selectActiveArrowsColor transparent transparent transparent;
+      }
+
+    }
+
+  }
+
+  &-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: $optionsBorder;
+    background-color: $optionsBackgroundColor;
+    color: $optionsColor;
+
+    li {
+      margin: 0;
+      padding: .75rem 1rem;
+      border-top: .0625rem solid rgba($optionsColor, .125);
+      transition: all 0.15s ease-in;
+
+      &:hover,
+      &.is-selected {
+        color: $optionsSelectedColor;
+        background: $optionsSelectedBackgroundColor;
+      }
+
+      &[rel="hide"] {
+        display: none;
+      }
+    }
+  }
+
+
+
+
+}
+
+
+
